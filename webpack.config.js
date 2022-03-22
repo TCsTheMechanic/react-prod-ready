@@ -42,12 +42,14 @@ module.exports = (env, argv) => {
     },
     devtool: devMode ? 'source-map' : false,
     devServer: {
+      historyApiFallback: true,
       hot: true,
       open: true,
     },
     output: {
       path: path.resolve(__dirname, './build'),
       filename: 'bundle.js',
+      publicPath: '/',
     },
     plugins: [
       new ReactRefreshWebpackPlugin(),
